@@ -3,8 +3,6 @@ from flask_bootstrap import Bootstrap
 from flask_moment import Moment
 from datetime import datetime
 
-moment = Moment(app)
-
 app = Flask(__name__)
 
 @app.route('/')
@@ -27,3 +25,4 @@ if __name__=='__main__':
     app.run()
     
 bootstrap = Bootstrap(app)
+moment = Moment(app)
