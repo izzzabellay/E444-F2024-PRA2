@@ -1,13 +1,15 @@
 from flask import Flask, render_template
 from flask_bootstrap import Bootstrap
 from flask_moment import Moment
+from datetime import datetime
+
 moment = Moment(app)
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('index.html', currrent_time=datetime.utcnow())
 
 @app.route('/user/<name>')
 def user(name):
