@@ -24,8 +24,22 @@
 </div>
 {% endblock %}
 
+{% block head %}
+{{ super() }}
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.icon') }}"
+    type="image/x-icon">
+<link rel="icon" href="{{ url_for('static', filename='favicon.icon') }}"
+    type="image/x-icon">
+{% endblock %}
+
+
 {% block content %}
 <div class="container">
     {% block page_content %}{% endblock %}
 </div>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+{{ moment.include_moment() }}
 {% endblock %}
